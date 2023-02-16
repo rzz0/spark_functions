@@ -1,7 +1,7 @@
-from pyspark.sql.functions import when
+from pyspark.sql.functions import when, col
 
 
-def replace_values_with_expression(input_df, col, expression, new_value):
+def replace_values_with_expression(input_df, column, expression, new_value):
     output_df = input_df.withColumn(
-        col, when(expression, new_value).otherwise(col(col)))
+        column, when(expression, new_value).otherwise(col(column)))
     return output_df
