@@ -1,3 +1,3 @@
-def rename_column(df, old_name, new_name):
-    df = df.withColumnRenamed(old_name, new_name)
-    return df
+def rename_column(input_df, old, new):
+    output_df = input_df.withColumnRenamed(old, new)
+    return output_df
